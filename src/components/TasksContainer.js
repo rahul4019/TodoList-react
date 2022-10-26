@@ -10,7 +10,7 @@ function TaskContainer(props) {
           <div
             className="task d-flex align-items-center justify-content-between p-3 my-2 rounded"
             key={todo.id}
-            completed={todo.completed}
+            completed={todo.completed.toString()}
           >
             <span className="task-content"> {todo.title} </span>
             <div className="btn-container d-flex">
