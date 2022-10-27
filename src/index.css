@@ -87,7 +87,6 @@ input {
   animation: s3 1s infinite linear;
 }
 
-
 .task {
   background: rgb(49 45 45);
   height: auto;
@@ -100,10 +99,6 @@ input {
 
 .icon {
   cursor: pointer;
-}
-
-.check-icon :hover {
-  color: rgb(42, 216, 129);
 }
 
 .delete-icon :hover {

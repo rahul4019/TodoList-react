@@ -11,9 +11,18 @@ function App() {
       .then((json) => setAllTodos(json), setLoader(false));
   }, []);
 
+  const filterTodos = (todoId) => {
+    let newTodos = allTodos.filter((todo) => todo.id != todoId);
+    setAllTodos(newTodos);
+  };
+
   return (
     <div className="App">
-      <Container allTodos={allTodos} Loader={Loader} />
+      <Container
+        allTodos={allTodos}
+        Loader={Loader}
+        filterTodos={filterTodos}
+      />
     </div>
   );
 }
