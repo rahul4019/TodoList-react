@@ -79,12 +79,12 @@ function TaskCard(props) {
     >
       {/* complete icon */}
       {completed === true ? (
-        <div className="icon check-icon me-3 fs-5 d-inline-block">
-          <i className="fa-regular fa-circle-check text-success"></i>
+        <div className="check-icon me-3 fs-5 d-inline-block">
+          <i className="fa-regular fa-circle-check" style={{color: "#80ED99"}}></i>
         </div>
       ) : (
-        <div className="icon check-icon me-3 fs-5 d-inline-block">
-          <i className="fa-regular fa-circle-check text-light"></i>
+        <div className="check-icon me-3 fs-5 d-inline-block">
+          <i className="fa-regular fa-circle-check"></i>
         </div>
       )}
 

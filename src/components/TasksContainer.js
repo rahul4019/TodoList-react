@@ -1,6 +1,5 @@
 import TaskCard from "./TaskCard";
 
-
 function TaskContainer(props) {
   const { allTodos, Loader, filterTodos } = props;
 
@@ -11,7 +10,7 @@ function TaskContainer(props) {
       ) : (
         allTodos.map((todo) => (
           <TaskCard
-            key = {todo.id}
+            key={todo.id}
             title={todo.title}
             id={todo.id}
             completed={todo.completed}

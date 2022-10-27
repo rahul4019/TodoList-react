@@ -16,7 +16,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #161616;
+  background: #0e1d2f;
   color: rgba(255, 255, 255, 0.823);
   width: 100vw;
 }
@@ -27,18 +27,18 @@ code {
 }
 
 h1 {
-  color: #7c4eb5;
+  color: #677db7;
 }
 
 .todo-container {
   width: 90vw;
   max-width: 600px;
   height: 75vh;
-  background: #2d805ca3;
+  background: #454b66;
 }
 
 .inputBox {
-  border: 2px solid #e37964;
+  border: 2px solid #e0a800;
   width: 100%;
 }
 
@@ -52,18 +52,19 @@ input {
 }
 
 .add-btn {
-  background: #e37964;
+  background: #e0a800;
   width: 15%;
+  color: #000;
 }
 
 .add-btn:hover {
-  background: #c4553e;
+  background: #f5b800;
 }
 
 .task-container {
   height: 80%;
   width: 100%;
-  background: #161616;
+  background: #040f0f;
 }
 
 /* Loader customization */
@@ -88,13 +89,13 @@ input {
 }
 
 .task {
-  background: rgb(49 45 45);
+  background: #281d34;
   height: auto;
   box-sizing: content-box;
 }
 
 .task:hover {
-  background: rgb(69, 64, 64);
+  background: #513b68;
 }
 
 .icon {
