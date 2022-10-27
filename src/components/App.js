@@ -11,6 +11,7 @@ function App() {
       .then((json) => setAllTodos(json), setLoader(false));
   }, []);
 
+  // filters the deleted Todo and sets the "allTodos"
   const filterTodos = (todoId) => {
     let newTodos = allTodos.filter((todo) => todo.id != todoId);
     setAllTodos(newTodos);

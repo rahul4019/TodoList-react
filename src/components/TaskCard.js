@@ -7,13 +7,17 @@ function TaskCard(props) {
   const [edit, setEdit] = useState(false);
   const [editedText, setEditText] = useState("");
 
+  // handles deletion of  todo
   const handleDeleteBtn = (todoId) => {
+    // api request to delete todo
     fetch(`https://jsonplaceholder.typicode.com/posts/${todoId}`, {
       method: "DELETE",
     });
 
+    // removes todo from the allTodo based on passed todoId
     filterTodos(todoId);
 
+    // toast notification after deletion
     toast.success("Deleted successfully!", {
       position: "top-right",
       style: {
@@ -24,11 +28,12 @@ function TaskCard(props) {
     });
   };
 
+  // handles edit functionality of todo
   const handleEdit = (todoId) => {
-    console.log(editedText);
     if (!edit) {
       setEdit(true);
     } else if (editedText !== "") {
+      // api call for updation of todo
       fetch(`https://jsonplaceholder.typicode.com/posts/1`, {
         method: "PUT",
         body: JSON.stringify({
@@ -42,6 +47,7 @@ function TaskCard(props) {
       })
         .then((response) => response.json())
         .then((json) => {
+          console.log(json);
           toast.success("Todo updated successfully!", {
             position: "top-right",
             style: {
@@ -67,6 +73,7 @@ function TaskCard(props) {
     }
   };
 
+  // sets value of editText
   const handleEditedText = () => {
     const text = document.getElementById("edited-text").value;
     setEditText(text);
@@ -80,7 +87,10 @@ function TaskCard(props) {
       {/* complete icon */}
       {completed === true ? (
         <div className="check-icon me-3 fs-5 d-inline-block">
-          <i className="fa-regular fa-circle-check" style={{color: "#80ED99"}}></i>
+          <i
+            className="fa-regular fa-circle-check"
+            style={{ color: "#80ED99" }}
+          ></i>
         </div>
       ) : (
         <div className="check-icon me-3 fs-5 d-inline-block">
@@ -88,15 +98,7 @@ function TaskCard(props) {
         </div>
       )}
 
-      {/* task content */}
-      {/* {todo.completed ? (
-          <span className="task-content flex-fill text-decoration-line-through ">
-            {todo.title}
-          </span>
-        ) : (
-          <span className="task-content flex-fill ">{todo.title}</span>
-        )} */}
-
+      {/* todo text */}
       {edit ? (
         <input
           type="text"

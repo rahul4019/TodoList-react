@@ -6,7 +6,7 @@ function InputBox() {
 
   const addTodo = () => {
     if (newTodo !== "") {
-      // making api call to post new Todo
+      // makes api call to post new Todo
       fetch("https://jsonplaceholder.typicode.com/posts", {
         method: "POST",
         body: JSON.stringify({
@@ -17,7 +17,9 @@ function InputBox() {
         headers: {
           "Content-type": "application/json; charset=UTF-8",
         },
-      }).then((response) => response.json());
+      })
+        .then((response) => response.json())
+        .then((json) => console.log(json));
       // toast notification on success
       toast.success("Todo added successfully!", {
         position: "top-right",
@@ -44,6 +46,7 @@ function InputBox() {
     setNewTodo("");
   };
 
+  // sets newTodo, text entered in the inputBox
   const handleTodoText = () => {
     let todoTitle = document.getElementById("todo-text").value;
     setNewTodo(todoTitle);
